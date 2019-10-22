@@ -8,7 +8,7 @@ server:
 spring:
   profiles: dev # 开发环境
   application:
-    name: pingyouhui-zuul
+    name: pingyouhui-zuul01
 
 eureka:
   client:
