@@ -18,6 +18,8 @@ eureka:
   client:
     registerWithEureka: false 
     fetchRegistry: false 
+    fetch-registry: true
+    register-with-eureka: true
     serviceUrl:
       defaultZone: http://server02:6002/eureka/
   server:
@@ -38,6 +40,8 @@ eureka:
   client:
     registerWithEureka: false 
     fetchRegistry: false 
+    fetch-registry: true
+    register-with-eureka: true
     serviceUrl:
       defaultZone: http://server02:6002/eureka/
   server:
