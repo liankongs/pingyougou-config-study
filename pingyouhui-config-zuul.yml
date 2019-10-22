@@ -1,7 +1,7 @@
-# spring:
-#   profiles:
-#     active: dev # 激活开发环境配置
-# ---
+spring:
+  profiles:
+    active: dev # 激活开发环境配置
+---
 server:
   port: 7001 # 服务端口
 
@@ -19,4 +19,21 @@ eureka:
   instance:
     instanceId: ${spring.application.name}:${server.port} # 指定实例ID,就不会显示主机名了
     preferIpAddress: true #访问路径可以显示IP地址
-# ---
+---
+server:
+  port: 7001 # 服务端口
+
+spring:
+  profiles: post # 开发环境
+  application:
+    name: pingyouhui-zuul
+
+eureka:
+  client:
+    registerWithEureka: true # 服务注册开关
+    fetchRegistry: true # 服务发现开关
+    serviceUrl: 
+      defaultZone: http://server01:6001/eureka,http://server02:6002/eureka
+  instance:
+    instanceId: ${spring.application.name}:${server.port} # 指定实例ID,就不会显示主机名了
+    preferIpAddress: true #访问路径可以显示IP地址
