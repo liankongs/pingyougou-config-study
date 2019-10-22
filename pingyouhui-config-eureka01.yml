@@ -32,12 +32,14 @@ spring:
 
 eureka:
   instance:
-    hostname: eureka6001.com
+    hostname: server01
+    prefer-ip-address: false
+    ip-address: 127.0.0.1
   client:
     registerWithEureka: false 
     fetchRegistry: false 
     serviceUrl:
-      defaultZone: http://eureka6002.com:6002/eureka/
+      defaultZone: http://server02:6002/eureka/
   server:
     enable-self-preservation: true # 开启自我保护机制*****************
     
