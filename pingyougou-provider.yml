@@ -1,10 +1,11 @@
 #注意：如果在记事本上编写，下面的缩进不要使用Tab来缩进，不然报错
 spring:
+  application:
+    name: pingyougou-product01
   profiles:
     active: dev # 激活开发环境配置
 ---
-server:
-  port: 8001
+
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml 
   type-aliases-package: com.pingyougou.pojo
@@ -33,13 +34,14 @@ eureka:
     instanceId: ${spring.application.name}:${server.port}
     prefer-ip-address: true 
 ---
-server:
-  port: 8001
+
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml 
   type-aliases-package: com.pingyougou.pojo
   mapper-locations: classpath:mybatis/mapper/**/*.xml
 spring:
+  application:
+    name: pingyougou-product02
   profiles: prod # 生产环境
   
   datasource:
